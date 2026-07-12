@@ -1,0 +1,5 @@
+pyserial
+SpeechRecognition
+gTTS
+playsound
+pyaudio
