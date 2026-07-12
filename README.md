@@ -1,37 +1,40 @@
 # 🚗 Voice Controlled Robot Car with Rule-Based Chatbot
 
-A Bluetooth-based **Voice Controlled Robot Car** developed using **Arduino UNO** and **Python**. The robot responds to real-time voice commands for movement while also providing predefined conversational responses through a **rule-based chatbot**.
+A Bluetooth-based **Voice Controlled Robot Car** developed using **Arduino UNO** and **Python**. The robot responds to real-time voice commands for movement while also providing predefined conversational responses through a **Rule-Based Chatbot**.
 
-The project demonstrates the integration of **Speech Recognition**, **Bluetooth Communication**, **Arduino Motor Control**, and **Text-to-Speech (TTS)** to create an interactive robotic system.
+The project demonstrates the integration of **Speech Recognition**, **Bluetooth Communication**, **Arduino Motor Control**, and **Text-to-Speech (TTS)** to create an interactive robotic system capable of wireless robot navigation and human-robot interaction.
 
 ---
 
 ## 📖 Overview
 
-This project enables a user to control a robot car using natural voice commands from a computer. Voice input is processed using Python, converted into movement commands, and transmitted wirelessly through an HC-05 Bluetooth module to an Arduino UNO. The Arduino controls the DC motors via an L298N motor driver while the chatbot responds to predefined conversational queries.
+The **Voice Controlled Robot Car with Rule-Based Chatbot** is an intelligent robotics project that enables users to control a robot wirelessly using voice commands. The system captures voice input through a microphone, converts speech into text using Python's Speech Recognition library, identifies movement or chatbot commands, and sends corresponding instructions to an Arduino UNO through an HC-05 Bluetooth module.
+
+The Arduino processes these commands and controls the L298N Motor Driver, which drives the DC motors for robot movement. Alongside robot navigation, the project includes a **Rule-Based Chatbot** capable of answering predefined conversational questions using Text-to-Speech (TTS), providing an interactive user experience.
 
 ---
 
 ## ✨ Features
 
-- 🎙️ Real-time Voice Recognition
+- 🎙️ Real-Time Voice Recognition
 - 🤖 Rule-Based Chatbot
 - 📡 Bluetooth Communication (HC-05)
 - 🚗 Wireless Robot Navigation
 - 🔊 Text-to-Speech Responses
 - ⚡ Real-Time Command Processing
 - 🛑 Safe Stop Function
-- 💻 Simple and Easy-to-Use Interface
+- 💻 Easy-to-Use Python Interface
 - 🔄 Bidirectional Robot Control
+- 📢 Natural Voice Interaction
 
 ---
 
 ## 🎯 Supported Voice Commands
 
-### Robot Movement
+### 🚗 Robot Movement
 
-| Voice Command | Arduino Command | Action |
-|--------------|-----------------|--------|
+| Voice Command | Arduino Command | Robot Action |
+|--------------|-----------------|--------------|
 | Forward | `F` | Move Forward |
 | Backward | `B` | Move Backward |
 | Left | `L` | Turn Left |
@@ -40,9 +43,9 @@ This project enables a user to control a robot car using natural voice commands 
 
 ---
 
-### Chatbot Commands
+### 🤖 Chatbot Commands
 
-The chatbot supports several predefined conversational responses.
+The Rule-Based Chatbot supports predefined conversational responses.
 
 Examples include:
 
@@ -53,6 +56,7 @@ Examples include:
 - Who made you?
 - What can you do?
 - Thank you
+- Goodbye
 - Bye
 - Exit
 
@@ -65,7 +69,7 @@ Examples include:
 - Python
 - Arduino C++
 
-### Hardware
+### Hardware Components
 
 - Arduino UNO
 - HC-05 Bluetooth Module
@@ -91,8 +95,8 @@ Examples include:
 
 ### HC-05 Bluetooth Module
 
-| HC-05 | Arduino |
-|--------|----------|
+| HC-05 | Arduino UNO |
+|--------|-------------|
 | VCC | 5V |
 | GND | GND |
 | TXD | Pin 10 |
@@ -102,8 +106,8 @@ Examples include:
 
 ### L298N Motor Driver
 
-| L298N | Arduino |
-|--------|----------|
+| L298N | Arduino UNO |
+|--------|-------------|
 | IN1 | Pin 2 |
 | IN2 | Pin 3 |
 | IN3 | Pin 4 |
@@ -114,45 +118,35 @@ Examples include:
 
 ## 🔄 System Workflow
 
-```text
-User Voice
-      │
-      ▼
-Speech Recognition
-      │
-      ▼
-Python Application
-      │
-      ▼
-Command Detection
-      │
-      ▼
-Bluetooth (HC-05)
-      │
-      ▼
-Arduino UNO
-      │
-      ▼
-L298N Motor Driver
-      │
-      ▼
-DC Motors
-      │
-      ▼
-Robot Movement
-```
+<p align="center">
+  <img src="./images/workflow.png" alt="Voice Controlled Robot Car Workflow" width="850">
+</p>
+
+The workflow begins when the user speaks a voice command through the microphone. The Python application converts the speech into text using Speech Recognition, identifies whether the input is a movement or chatbot command, and transmits the corresponding instruction to the Arduino UNO through the HC-05 Bluetooth module. The Arduino controls the L298N Motor Driver, which powers the DC motors to perform the requested movement. For conversational queries, the Rule-Based Chatbot generates predefined responses using Google Text-to-Speech (gTTS).
 
 ---
 
 ## 🚀 Installation
 
-### 1. Clone the Repository
+### 1️⃣ Clone the Repository
 
 ```bash
 git clone https://github.com/your-username/Voice-Controlled-Robot-Car.git
 ```
 
-### 2. Install Python Dependencies
+### 2️⃣ Navigate to the Project Folder
+
+```bash
+cd Voice-Controlled-Robot-Car
+```
+
+### 3️⃣ Install Python Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+Or install them manually:
 
 ```bash
 pip install pyserial
@@ -162,26 +156,23 @@ pip install playsound
 pip install pyaudio
 ```
 
-Or install all dependencies using:
-
-```bash
-pip install -r requirements.txt
-```
-
 ---
 
 ## ▶️ Usage
 
 ### Upload Arduino Code
 
-1. Open the Arduino sketch.
-2. Select the correct board.
-3. Select the COM Port.
-4. Upload the code.
+1. Open the Arduino IDE.
+2. Open the Arduino sketch.
+3. Select **Arduino UNO**.
+4. Select the correct COM Port.
+5. Upload the code.
 
-### Connect Bluetooth
+---
 
-- Pair the HC-05 module with your computer.
+### Pair the Bluetooth Module
+
+- Pair HC-05 with your computer.
 - Default PIN:
 
 ```
@@ -194,13 +185,17 @@ or
 0000
 ```
 
-- Update the Bluetooth COM port inside the Python script.
+---
 
-Example:
+### Configure the COM Port
+
+Inside `main.py`, update:
 
 ```python
 COM_PORT = "COM3"
 ```
+
+Replace `COM3` with your Bluetooth COM port if necessary.
 
 ---
 
@@ -210,7 +205,7 @@ COM_PORT = "COM3"
 python main.py
 ```
 
-Speak commands such as:
+Example Commands
 
 ```
 Forward
@@ -219,26 +214,29 @@ Left
 Right
 Stop
 Hello
+How are you
 Who made you
+What can you do
 Bye
 ```
 
 ---
 
-## 🧠 Chatbot
+## 🧠 Rule-Based Chatbot
 
-The chatbot implemented in this project is a **rule-based conversational assistant**. It recognizes predefined questions and replies with programmed responses while simultaneously supporting robot movement through voice commands.
+The chatbot implemented in this project is a **Rule-Based Conversational Assistant**. It recognizes predefined voice commands and questions using conditional statements and responds through Google Text-to-Speech.
 
-Unlike AI-powered language models, this chatbot operates using conditional logic and keyword matching, making it lightweight, reliable, and suitable for embedded robotics applications.
+Unlike AI-powered conversational models, this chatbot follows predefined logic, making it lightweight, fast, and ideal for embedded robotics projects.
 
 ---
 
 ## 📊 Testing Results
 
-| Test | Result |
-|------|---------|
+| Test | Status |
+|------|--------|
 | Voice Recognition | ✅ Passed |
 | Bluetooth Communication | ✅ Passed |
+| Arduino Communication | ✅ Passed |
 | Forward Movement | ✅ Passed |
 | Backward Movement | ✅ Passed |
 | Left Turn | ✅ Passed |
@@ -251,16 +249,16 @@ Unlike AI-powered language models, this chatbot operates using conditional logic
 
 ## 📈 Future Enhancements
 
-- AI-powered conversational assistant
-- OpenAI API integration
+- AI-Powered Chatbot Integration
+- OpenAI API Integration
 - Mobile Application Control
 - Computer Vision Integration
 - Face Recognition
 - Object Detection
 - Obstacle Avoidance
 - Autonomous Navigation
-- IoT-based Remote Monitoring
-- Speed Control using PWM
+- IoT-Based Monitoring
+- PWM Speed Control
 - Battery Monitoring System
 
 ---
@@ -271,10 +269,11 @@ This project demonstrates practical implementation of:
 
 - Arduino Programming
 - Embedded Systems
+- Robotics
 - Bluetooth Communication
 - Voice Recognition
 - Human-Robot Interaction
-- Python Automation
+- Python Programming
 - Motor Control
 - Rule-Based Artificial Intelligence
 
@@ -282,15 +281,15 @@ This project demonstrates practical implementation of:
 
 ## 🤝 Contributing
 
-Contributions are welcome.
+Contributions are welcome!
 
-Feel free to fork the repository, improve the project, and submit a pull request.
+If you would like to improve this project, feel free to fork the repository, create a new branch, and submit a pull request.
 
 ---
 
 ## 📄 License
 
-This project is released under the **MIT License**.
+This project is licensed under the **MIT License**.
 
 ---
 
@@ -300,12 +299,14 @@ This project is released under the **MIT License**.
 
 Artificial Intelligence Student
 
-Gomal University, Dera Ismail Khan
+Institute of Computational Intelligence
+
+Gomal University, Dera Ismail Khan, Pakistan
 
 ---
 
 ## ⭐ Support
 
-If you found this project useful, please consider giving it a ⭐ on GitHub.
+If you found this project helpful, please consider giving it a **⭐ Star** on GitHub.
 
-Your support is greatly appreciated!
+Your support motivates future improvements and helps others discover this project.
