@@ -293,14 +293,25 @@ This project is licensed under the **MIT License**.
 
 ---
 
-## 👨‍💻 Developer
+## 👨‍💻 Developers
 
-**Muhammad Daniyal**
+### Muhammad Daniyal
+**Artificial Intelligence Student**  
+Institute of Computational Intelligence  
+Gomal University, Dera Ismail Khan, Pakistan
 
-Artificial Intelligence Student
+---
 
-Institute of Computational Intelligence
+### Bushra Javed
+**Artificial Intelligence Student**  
+Institute of Computational Intelligence  
+Gomal University, Dera Ismail Khan, Pakistan
 
+---
+
+### Dua Bukhari
+**Artificial Intelligence Student**  
+Institute of Computational Intelligence  
 Gomal University, Dera Ismail Khan, Pakistan
 
 ---
